@@ -33,9 +33,7 @@ return {
   {
     "simeji/winresizer",
   },
-  {
-    "tomtom/tcomment_vim"
-  },
+  -- FIXME: wanna get plugins which preview doesnt overwrap on color code
 	{
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -43,7 +41,10 @@ return {
     end,
 	},
 	{
-		'nathanaelkane/vim-indent-guides'
+    'lukas-reineke/indent-blankline.nvim',
+    config = function() 
+      require("ibl").setup()
+    end,
 	},
   {
     "kylechui/nvim-surround",
@@ -54,9 +55,5 @@ return {
             -- Configuration here, or leave empty to use defaults
         })
     end
-  },
-  -- languages
-  {
-    "fatih/vim-go"
   },
 }
