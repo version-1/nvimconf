@@ -1,5 +1,14 @@
 
 return {
+  {
+    'nvim-tree/nvim-web-devicons',
+    config = function()
+      require('nvim-web-devicons').setup({
+        default = true;
+        color_icons = true;
+      })
+    end
+  },
   -- the colorscheme should be available when starting Neovim
   {
     "folke/tokyonight.nvim",
@@ -11,39 +20,12 @@ return {
     end,
   },
   {
-    "scrooloose/nerdtree",
-    keys = {
-      { "<leader>e", "<cmd>NERDTreeToggle<cr>", desc = "NERDTreeToggle" },
-    },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-  },
-  {
     "nvim-telescope/telescope.nvim",
     keys = {
       { "<leader>p", "<cmd>Telescope find_files<cr>", desc = "Telescope find_files" },
       { "<leader>g", "<cmd>Telescope live_grep<cr>", desc = "Telescope find_files" },
     },
     dependencies = { 'nvim-lua/plenary.nvim' }
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      'neovim/nvim-lspconfig',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-nvim-lua',
-    },
-  },
-  {
-    "mhartington/formatter.nvim",
-    keys = {
-      { "<leader>i", "<cmd>Format<cr>", desc = "Format" },
-      { "<leader>F", "<cmd>FormatWrite<cr>", desc = "Format" },
-    },
   },
   {
     "github/copilot.vim",
@@ -54,28 +36,26 @@ return {
   {
     "tomtom/tcomment_vim"
   },
-  {
-    "github/copilot.vim"
-  },
 	{
     "norcalli/nvim-colorizer.lua",
-	},
-	{
-    'vim-syntastic/syntastic'
+    config = function()
+      require("colorizer").setup()
+    end,
 	},
 	{
 		'nathanaelkane/vim-indent-guides'
 	},
-	{
-    'tpope/vim-surround',
-	},
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  },
   -- languages
-  {
-    "ngmy/vim-rubocop"
-  },
-  {
-    "mattn/vim-goimports"
-  },
   {
     "fatih/vim-go"
   },

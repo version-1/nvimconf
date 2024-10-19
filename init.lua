@@ -1,7 +1,3 @@
-require('config')
+require('base')
 require('keymaps')
 require("config.lazy")
-require("statusline")
-require("bootstrap")
-require("bootstraps.cmp")
-require("bootstraps.formatter")
