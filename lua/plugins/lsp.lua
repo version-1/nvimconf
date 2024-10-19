@@ -1,6 +1,5 @@
 return {
   "neovim/nvim-lspconfig",
-  event = "User FilePost",
   config = function()
     -- ref: https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua
     local M = {}
@@ -86,7 +85,7 @@ return {
         },
       }
 
-      require("lspconfig").ts_ls.setup({ })
+      require("lspconfig").ts_ls.setup({})
       require("lspconfig").gopls.setup({})
     end
 
