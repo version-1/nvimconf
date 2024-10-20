@@ -77,9 +77,21 @@ return {
     -- Set up lspconfig.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-    -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-    --   capabilities = capabilities
-    -- }
+    require('lspconfig').ts_ls.setup {
+      capabilities = capabilities
+    }
+    require('lspconfig').gopls.setup {
+      capabilities = capabilities
+    }
+    require('lspconfig').lua_ls.setup {
+      capabilities = capabilities
+    }
+    require('lspconfig').ruby_lsp.setup {
+      capabilities = capabilities
+    }
+    require('lspconfig').ziggy.setup {
+      capabilities = capabilities
+    }
   end
 }
 
