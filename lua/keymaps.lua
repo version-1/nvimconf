@@ -17,9 +17,12 @@ map('n', '<Leader>wq', ':<C-u>wq\n', { noremap = true })
 -- open terminal
 map('n', '<Leader>tt', ':terminal\n', { noremap = true })
 
-
 map('i', '<C-k>', '<Up>', {})
 map('i', '<C-j>', '<Down>', {})
 map('i', '<C-h>', '<Left>', {})
 map('i', '<C-l>', '<Right>', {})
 
+
+-- rebind embeded command
+map('n', '<C-_>', 'gcc', { noremap = false })
+map('v', '<C-_>', 'gc', { noremap = false })
