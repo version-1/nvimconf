@@ -23,7 +23,7 @@ map('i', '<C-h>', '<Left>', {})
 map('i', '<C-l>', '<Right>', {})
 
 -- show diagnostics
-map('n', '<Leader>d', ':lua vim.diagnostic.open_float()<CR>', { noremap = true })
+-- map('n', '<Leader>d', ':lua vim.diagnostic.open_float()<CR>', { noremap = true })
 
 -- rebind embeded command
 map('n', '<C-_>', 'gcc', { noremap = false })
