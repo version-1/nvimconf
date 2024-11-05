@@ -18,6 +18,7 @@ return {
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
+      colorscheme = 'tokyonight-storm',
       inactive_sections = {
         lualine_a = {},
         lualine_b = {

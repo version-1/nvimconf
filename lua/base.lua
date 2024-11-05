@@ -20,6 +20,7 @@ opt.ruler = true
 opt.smartcase = true
 opt.showmatch = true
 opt.updatetime = 250
+-- opt.winblend = 10
 
 -- mapleader
 g.mapleader = ' '
