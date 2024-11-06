@@ -1,6 +1,9 @@
 return {
   'nvim-lualine/lualine.nvim',
   config = function()
+    -- local theme = require 'lualine.themes.tokyonight'
+    -- theme.normal.c.bg = nil
+
     require('lualine').setup({
       sections = {
         lualine_a = { 'mode' },
@@ -18,7 +21,9 @@ return {
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
-      colorscheme = 'tokyonight-storm',
+      options = {
+        theme = 'nord',
+      },
       inactive_sections = {
         lualine_a = {},
         lualine_b = {
