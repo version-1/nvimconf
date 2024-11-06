@@ -1,20 +1,13 @@
 return {
   {
     'nvim-tree/nvim-web-devicons',
+    lazy = true,
     config = function()
       require('nvim-web-devicons').setup({
         default = true,
         color_icons = true,
       })
     end
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      { "<leader>p", "<cmd>Telescope find_files<cr>", desc = "Telescope find_files" },
-      { "<leader>g", "<cmd>Telescope live_grep<cr>", desc = "Telescope find_files" },
-    },
-    dependencies = { 'nvim-lua/plenary.nvim' }
   },
   {
     "github/copilot.vim",
