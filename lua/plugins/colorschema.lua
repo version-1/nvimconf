@@ -48,6 +48,10 @@ return {
           hl.WhichKeyNormal        = {
             bg = c.bg_dark
           }
+          hl.LazyNormal = {
+            bg = c.bg_dark,
+            fg = c.fg_dark,
+          }
         end,
       }
       vim.cmd([[colorscheme tokyonight-storm]])
