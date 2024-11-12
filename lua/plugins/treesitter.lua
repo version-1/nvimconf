@@ -1,12 +1,16 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = { "BufReadPost", "BufNewFile" },
-  cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+  lazy = false,
+  -- event = { "BufReadPost", "BufNewFile" },
+  -- cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   config = function()
     require('nvim-treesitter.configs').setup {
       ensure_installed = {
         "ruby",
         "go",
+        "gotmpl",
+        "gomod",
+        "gosum",
         "zig",
         "tsx",
         "javascript",
@@ -16,10 +20,22 @@ return {
         "html",
         "css",
         "lua",
+        "luadoc",
         "vim",
+        "vimdoc",
+        "markdown_inline",
         "markdown",
         "sql",
-        "yaml"
+        "yaml",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
+        "gitcommit",
+        "gitignore",
+        "graphql",
+        "c",
+        "cpp",
+        "c_sharp",
       },
       auto_install = true,
       highlight = {

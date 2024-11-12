@@ -11,7 +11,7 @@ return {
         return { buffer = bufnr, desc = "LSP " .. desc }
       end
 
-      local buf = vim.lsp.buf 
+      local buf = vim.lsp.buf
       map("n", "gD", buf.declaration, opts "Go to declaration")
       map("n", "gd", buf.definition, opts "Go to definition")
       map("n", "gi", buf.implementation, opts "Go to implementation")
@@ -88,7 +88,6 @@ return {
 
       require("lspconfig").ts_ls.setup({})
       require("lspconfig").gopls.setup({})
-      require("lspconfig").gotmpl.setup({})
       require("lspconfig").ruby_lsp.setup({})
       require("lspconfig").ziggy.setup({})
     end
