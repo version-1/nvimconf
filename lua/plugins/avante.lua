@@ -4,7 +4,36 @@ return {
   lazy = false,
   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
-    provider = "claude",
+    provider = "openai",
+    openai = {
+      endpoint = "https://api.openai.com/v1",
+      model = "gpt-4o",
+      timeout = 30000,
+      temperature = 0,
+      max_tokens = 4096,
+    },
+    vendors = {
+      ["gpt-4o"] = {
+        __inherited_from = 'openai',
+        model = "gpt-4o",
+      },
+      ["gpt-4o-mini"] = {
+        __inherited_from = 'openai',
+        model = "gpt-4o-mini",
+      },
+      ["o1"] = {
+        __inherited_from = 'openai',
+        model = "o1-preview",
+      },
+      ["o1-mini"] = {
+        __inherited_from = 'openai',
+        model = "o1-mini",
+      },
+      ["o3-mini"] = {
+        __inherited_from = 'openai',
+        model = "o3-mini",
+      },
+    },
     behaviour = {
       auto_suggestions = false, -- Experimental stage
       auto_set_highlight_group = true,
