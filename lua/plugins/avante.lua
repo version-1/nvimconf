@@ -4,7 +4,8 @@ return {
   lazy = false,
   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
-    provider = "openai",
+    provider = "o1",
+    cursor_applying_provider = 'o1',
     openai = {
       endpoint = "https://api.openai.com/v1",
       model = "gpt-4o",
@@ -17,11 +18,19 @@ return {
         __inherited_from = 'openai',
         model = "gpt-4o",
       },
+      ["gpt-4.5"] = {
+        __inherited_from = 'openai',
+        model = "gpt-4.5-preview",
+      },
       ["gpt-4o-mini"] = {
         __inherited_from = 'openai',
         model = "gpt-4o-mini",
       },
       ["o1"] = {
+        __inherited_from = 'openai',
+        model = "o1",
+      },
+      ["o1-preview"] = {
         __inherited_from = 'openai',
         model = "o1-preview",
       },

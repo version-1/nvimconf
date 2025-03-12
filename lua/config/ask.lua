@@ -38,3 +38,12 @@ for command, question in pairs(prompts) do
     { nargs = 0 }
   )
 end
+
+vim.api.nvim_create_user_command(
+  'AvanteShowProvider',
+  function()
+    print(require('avante.config').provider)
+  end,
+  { nargs = 0 }
+)
+
