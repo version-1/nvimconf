@@ -30,6 +30,7 @@ return {
             args = { "-i" },
           },
         },
+        terraform = { "terraform_fmt" },
         ["_"] = { "trim_whitespace" },
       },
       default_format_opts = {
