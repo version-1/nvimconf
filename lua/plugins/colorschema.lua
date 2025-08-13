@@ -1,13 +1,4 @@
 return {
-  {
-    dir = "/Users/admin/Projects/Private/bonsai.nvim",
-    lazy = true,
-    priority = 1000, -- make sure to load this before all the other start plugins
-    opts = {},
-    config = function()
-      vim.cmd([[colorscheme bonsai]])
-    end
-  },
   -- {
   --   "shaunsingh/nord.nvim",
   --   lazy = false,

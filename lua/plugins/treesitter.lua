@@ -7,6 +7,7 @@ return {
     require('nvim-treesitter.configs').setup {
       ensure_installed = {
         "ruby",
+        "php",
         "go",
         "gotmpl",
         "gomod",

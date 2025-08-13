@@ -92,6 +92,11 @@ return {
     require('lspconfig').ziggy.setup {
       capabilities = capabilities
     }
+    require'lspconfig'.phpactor.setup{
+      capabilities = capabilities,
+      cmd = { "phpactor", "language-server" },
+      filetypes = { "php" },
+    }
   end
 }
 

@@ -87,6 +87,7 @@ return {
       }
 
       require("lspconfig").ts_ls.setup({})
+      require("lspconfig").phpactor.setup({})
       require("lspconfig").gopls.setup({})
       require("lspconfig").ruby_lsp.setup({})
       require("lspconfig").ziggy.setup({})
