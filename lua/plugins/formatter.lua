@@ -20,11 +20,11 @@ return {
         lua = { "stylua" },
         go = { "goimports", "gofmt" },
         php = { "phpcbf" },
-        javascriptreact = { "prettierd" },
-        typescriptreact = { "prettierd" },
-        javascript = { "prettierd" },
-        typescript = { "prettierd" },
-        json = { "prettierd" },
+        javascriptreact = { "biome", "biome-check", "prettierd" },
+        typescriptreact = { "biome", "biome-check", "prettierd" },
+        javascript = {  "biome", "biome-check", "prettierd" },
+        typescript = { "biom", "biome-check", "prettierd" },
+        json = { "biome", "biome-check", "prettierd" },
         sql = {
           {
             cmd = { "sql-formatter" },
