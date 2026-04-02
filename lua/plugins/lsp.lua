@@ -57,14 +57,25 @@ return {
       },
     }
 
+    local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+    if has_cmp_nvim_lsp then
+      M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
+    end
+
     M.defaults = function()
       -- dofile(vim.g.base46_cache .. "lsp")
       -- require("nvchad.lsp").diagnostic_config()
 
-      require("lspconfig").lua_ls.setup {
+      local default_server_opts = {
         on_attach = M.on_attach,
         capabilities = M.capabilities,
         on_init = M.on_init,
+      }
+
+      vim.lsp.config("lua_ls", {
+        on_attach = default_server_opts.on_attach,
+        capabilities = default_server_opts.capabilities,
+        on_init = default_server_opts.on_init,
 
         settings = {
           Lua = {
@@ -84,13 +95,23 @@ return {
             },
           },
         },
-      }
+      })
 
-      require("lspconfig").ts_ls.setup({})
-      require("lspconfig").phpactor.setup({})
-      require("lspconfig").gopls.setup({})
-      require("lspconfig").ruby_lsp.setup({})
-      require("lspconfig").ziggy.setup({})
+      vim.lsp.config("ts_ls", default_server_opts)
+      vim.lsp.config("phpactor", vim.tbl_extend("force", default_server_opts, {
+        cmd = { "phpactor", "language-server" },
+        filetypes = { "php" },
+      }))
+      vim.lsp.config("gopls", default_server_opts)
+      vim.lsp.config("ruby_lsp", default_server_opts)
+      vim.lsp.config("ziggy", default_server_opts)
+
+      vim.lsp.enable "lua_ls"
+      vim.lsp.enable "ts_ls"
+      vim.lsp.enable "phpactor"
+      vim.lsp.enable "gopls"
+      vim.lsp.enable "ruby_lsp"
+      vim.lsp.enable "ziggy"
     end
 
     M.defaults()
