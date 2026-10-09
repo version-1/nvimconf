@@ -31,8 +31,22 @@ g.maplocalleader = "\\"
 -- https://www.reddit.com/r/neovim/comments/oiyrvp/is_there_a_way_to_make_lsp_inline_diagnostic/
 api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
   group = api.nvim_create_augroup("float_diagnostic", { clear = true }),
-  callback = function ()
-    diagnostic.open_float(nil, {focus=false})
+  callback = function()
+    diagnostic.open_float(nil, { focus = false })
   end
 })
 
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(event)
+    vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, {
+      buffer = event.buf,
+      desc = "Go to definition",
+    })
+    vim.keymap.set("n", "<C-t>", "<C-o>", {
+      buffer = event.buf,
+      remap = false,
+      desc = "Jump back",
+    })
+  end,
+})
